@@ -1,7 +1,7 @@
 - downloaded http://mirrors.usc.edu/pub/linux/distributions/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-bin-DVD1to2.torrent from http://mirrors.usc.edu/pub/linux/distributions/centos/6.4/isos/x86_64/ using BitTorrent.
 - created DVDs from relulting .ISO files
-     CentOS-6.4-x86_64-bin-DVD1 burned to DVD labeled "CentOS 6.4 x86_64 bin DVD 1/2" (DVD1)
-     CentOS-6.4-x86_64-bin-DVD2 burned to DVD labeled "CentOS 6.4 x86_64 bin DVD 2/2" (DVD2)   
+     + CentOS-6.4-x86_64-bin-DVD1 burned to DVD labeled "CentOS 6.4 x86_64 bin DVD 1/2" (DVD1)
+     + CentOS-6.4-x86_64-bin-DVD2 burned to DVD labeled "CentOS 6.4 x86_64 bin DVD 2/2" (DVD2)   
 - turn on computer and wait for "No boot device available" message
 - open optical drive tray, insert DVD1, and close tray
 - press F1 key to boot from DVD
@@ -9,24 +9,23 @@
      NOTE: if you don't make a choice or touch an arrow key within 60 seconds, the installer will proceed to "Automatic boot." don't allow that.
 - choose the first menu item, "Install or upgrade an existing system" by pressing Enter 
 - the "Disc Found" screen appears. you can choose "OK" to test the DVD media or "Skip" to proceed with the install. "Skip" is recommended. Press Tab to highlight "Skip" and press Enter.
-- a simple install screen with CentOS centered on it appears. you should now have mouse control. click "Next" in the lower-right corner, or press Alt+n to proceed.
+- a simple install screen with CentOS centered on it appears. you should now have mouse control. click Next (in the lower-right corner) to proceed.
 - language selection: "English (English)" (the default). Press Enter or click Next.
 - kb selection: "U.S. English" (default). Press Enter or click Next.
-- storage devices: "Basic Storage Devices". Next.
-- Storage Device Warning. blah blah blah. Choose "Yes, discard any data."
+- storage devices: "Basic Storage Devices". Click Next.
+- Storage Device Warning. Warns there may be data on the hard disk. Choose "Yes, discard any data."
 - computername: j-and-b
-- do NOT click Next. instead, click Configure Network.
+     + do NOT click Next. instead, click Configure Network.
 - a Network Connections box appears.
-     clcik System eth0, the click Edit
-     assure IPV4 set to DHCP, then click close
-- clcik next
+     + click System eth0, then click Edit
+     + assure IPV4 is set to DHCP, then click Close
+- click Next
 - time zone: "America/Los Angeles" (not the default). Next.
-- enter root password and confirmation. Next.
+- enter root password and confirmation. Click Next.
 - installation type: "Use All Space" (not default)
-- clcik Review and modify partitionong layot, then click Next.
+- click Review and modify partitionong layout, then click Next.
 - accept or make changes as wanted, then click Create.
-- Create Storage dialog: choose Std Part, clk Create
-
+- Create Storage dialog: choose Standard Partition, then click Create
 
 
 
