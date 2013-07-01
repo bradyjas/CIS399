@@ -8,29 +8,38 @@
 - the "Welcome to CentOS 6.4!" menu screen appears
      NOTE: if you don't make a choice or touch an arrow key within 60 seconds, the installer will proceed to "Automatic boot." don't allow that.
 - choose the first menu item, "Install or upgrade an existing system" by pressing Enter 
-- the "Disc Found" screen appears. you can choose "OK" to test the DVD media or "Skip" to proceed with the install. "Skip" is recommended. Press Tab to highlight "Skip" and press Enter.
-- a simple install screen with CentOS centered on it appears. you should now have mouse control. click Next (in the lower-right corner) to proceed.
-- language selection: "English (English)" (the default). Press Enter or click Next.
-- kb selection: "U.S. English" (default). Press Enter or click Next.
-- storage devices: "Basic Storage Devices". Click Next.
-- Storage Device Warning. Warns there may be data on the hard disk. Choose "Yes, discard any data."
-- computername: j-and-b
-     + do NOT click Next. instead, click Configure Network.
+- the "Disc Found" screen appears. you can choose 'OK' to test the DVD media or 'Skip' to proceed with the install. 'Skip' is recommended. Press Tab to highlight 'Skip' and press Enter.
+- a simple install screen with CentOS centered on it appears. you should now have mouse control. click 'Next' (in the lower-right corner) to proceed.
+- language selection: "English (English)" (the default). Press 'Enter' or click 'Next'.
+- kb selection: "U.S. English" (default). Press 'Enter' or click 'Next'.
+- storage devices: "Basic Storage Devices". Click 'Next'.
+- Storage Device Warning. Warns there may be data on the hard disk. Choose 'Yes, discard any data'.
+- hostname: j-and-b
+     + do NOT click 'Next'. instead, click 'Configure Network'.
 - a Network Connections box appears.
-     + click System eth0, then click Edit
-     + assure IPV4 is set to DHCP, then click Close
-- click Next
-- time zone: "America/Los Angeles" (not the default). Next.
-- enter root password and confirmation. Click Next.
+     + click 'System eth0', then click 'Edit'
+     + address 128.223.203.18
+     + netmask 255.255.255.0
+     + dns servers 128.223.32.36,128.223.??.??
+     + click 'Apply'. click 'Close'.
+- click 'Next'
+- time zone: "America/Los Angeles" (not the default). 'Next'.
+- enter root password and confirmation. Click 'Next'.
 - installation type: "Use All Space" (not default)
-- click Review and modify partitionong layout, then click Next.
-- accept or make changes as wanted, then click Create.
-- Create Storage dialog: choose Standard Partition, then click Create
+- click 'Next'.
+- ("Format Warnings" may appear: click 'Format')
+- "Writing storage configration to disk": click 'Write changes to disk'.
+- several status screens go by as formatting takes place.
+- when formatting is done, config install type: 
+     + Basic Server selected
+     + CentOS checked
+     + Customize later selected
+     + click 'Next'
+- the actual installation takes place: a couple/few status screen and several minutes go by.
+- when installation is complete, the DVD is ejected and the screen says "Congratulations …"
+- remove DVD and press Ctl+Alt+Del to restart and boot CentOS from the hard disk.
+
+- CentOS boots! Yay!
+- type ifconfig -a to check network setup
 
 
-
-
-
-
-
-   
