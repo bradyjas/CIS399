@@ -1,0 +1,29 @@
+commit 0616ab0c5c30ce67d94ccfe598b0966a8c9cdc5a
+Author: Jason Brady <bradyjas@gmail.com>
+Date:   Sun Jul 7 21:38:44 2013 -0700
+
+    Final update of the HOWTO document.
+
+commit defb26191732c392d878b73e96213e407fd28fa2
+Author: Jason Brady <bradyjas@gmail.com>
+Date:   Sun Jul 7 19:59:59 2013 -0700
+
+    Added formated text file to be turned in.
+
+commit 10de4df24b1cd5e7716da3bdf5171a1a727670ae
+Author: bmccarthy777 <bmccarthy777@gmail.com>
+Date:   Mon Jul 1 16:17:42 2013 -0700
+
+    First successful install complete
+
+commit 3fb1d35ee600f536d96bdfb723e2f7d8ecdad057
+Author: bmccarthy777 <bmccarthy777@gmail.com>
+Date:   Mon Jul 1 12:07:14 2013 -0700
+
+    Cleaned up install doc
+
+commit 7b67b5490994e77c1bc0909beb40e9535d83abf4
+Author: bmccarthy777 <bmccarthy777@gmail.com>
+Date:   Mon Jul 1 11:03:27 2013 -0700
+
+    dding original install doc
