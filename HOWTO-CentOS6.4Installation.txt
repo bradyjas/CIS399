@@ -3,14 +3,14 @@
 HOWTO Install CentOS 6.4 on CIS 399 Workstation
      Jason Brady
      Bruce McCarthy
-       Revision 1.3
-       2013/07/02     
+       Revision 1.4
+       2013/07/07     
 ===============================================================================
 
 
-1.) Download and Create CentOS 6.4 Installation DVD
+Download and Create CentOS 6.4 Installation DVD
 -------------------------------------------------------------------------------
-     Download the CentOS 6.4 installation DVD image from a CentOS mirror.  A
+ 1.  Download the CentOS 6.4 installation DVD image from a CentOS mirror.  A
      full list of mirrors can be found at the website:
 
           http://www.centos.org/modules/tinycontent/index.php?id=30
@@ -19,60 +19,94 @@ HOWTO Install CentOS 6.4 on CIS 399 Workstation
      the file named "CentOS-6.4-x86_64-bin-DVD1.iso". The file is about 4.1 GB
      in size.
 
-     Once the installation DVD image is downloaded, using your favorite DVD
-     burning software, write the ISO file to the disc.
+ 2.  Once the installation DVD image is downloaded, use your favorite DVD
+     burning software to write the ISO file to the disc.
 
 
-2.) Boot the CentOD 6.4 Installation DVD
+Boot the CentOS 6.4 Installation DVD
 -------------------------------------------------------------------------------
-     Power on the CIS 399 workstaion and place the installation DVD in the
+ 1.  Power on the CIS 399 workstation and place the installation DVD in the
      DVD-ROM drive. Configure the workstation to boot from the DVD-ROM drive.
-     Once the installation DVD boots, the first screen you will see is the
-     message "Welcome to CentOS 6.4!". Wait for the installation to continue
-     past the welcome screen
+     Once the installation DVD boots, the first screen you will see is a menu
+     titled "Welcome to CentOS 6.4!". Using the keyboard, select the option to
+     "Install or upgrade an existing system".
 
-- downloaded http://mirrors.usc.edu/pub/linux/distributions/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-bin-DVD1to2.torrent from http://mirrors.usc.edu/pub/linux/distributions/centos/6.4/isos/x86_64/ using BitTorrent.
-- created DVDs from relulting .ISO files
-     + CentOS-6.4-x86_64-bin-DVD1 burned to DVD labeled "CentOS 6.4 x86_64 bin DVD 1/2" (DVD1)
-     + CentOS-6.4-x86_64-bin-DVD2 burned to DVD labeled "CentOS 6.4 x86_64 bin DVD 2/2" (DVD2)   
-- turn on computer and wait for "No boot device available" message
-- open optical drive tray, insert DVD1, and close tray
-- press F1 key to boot from DVD
-- the "Welcome to CentOS 6.4!" menu screen appears
-     NOTE: if you don't make a choice or touch an arrow key within 60 seconds, the installer will proceed to "Automatic boot." don't allow that.
-- choose the first menu item, "Install or upgrade an existing system" by pressing Enter 
-- the "Disc Found" screen appears. you can choose 'OK' to test the DVD media or 'Skip' to proceed with the install. 'Skip' is recommended. Press Tab to highlight 'Skip' and press Enter.
-- a simple install screen with CentOS centered on it appears. you should now have mouse control. click 'Next' (in the lower-right corner) to proceed.
-- language selection: "English (English)" (the default). Press 'Enter' or click 'Next'.
-- kb selection: "U.S. English" (default). Press 'Enter' or click 'Next'.
-- storage devices: "Basic Storage Devices". Click 'Next'.
-- Storage Device Warning. Warns there may be data on the hard disk. Choose 'Yes, discard any data'.
-- hostname: j-and-b
-     + do NOT click 'Next'. instead, click 'Configure Network'.
-- a Network Connections box appears.
-     + click 'System eth0', then click 'Edit'
-     + address 128.223.203.18
-     + netmask 255.255.255.0
-     + dns servers 128.223.32.36,128.223.??.??
-     + click 'Apply'. click 'Close'.
-- click 'Next'
-- time zone: "America/Los Angeles" (not the default). 'Next'.
-- enter root password and confirmation. Click 'Next'.
-- installation type: "Use All Space" (not default)
-- click 'Next'.
-- ("Format Warnings" may appear: click 'Format')
-- "Writing storage configration to disk": click 'Write changes to disk'.
-- several status screens go by as formatting takes place.
-- when formatting is done, config install type: 
-     + Basic Server selected
-     + CentOS checked
-     + Customize later selected
-     + click 'Next'
-- the actual installation takes place: a couple/few status screen and several minutes go by.
-- when installation is complete, the DVD is ejected and the screen says "Congratulations …"
-- remove DVD and press Ctl+Alt+Del to restart and boot CentOS from the hard disk.
+ 2.  The system will continue booting at stop at a window titled "Disc Found"
+     asking if you wish to test the installation media for errors. For this
+     HOWTO, select "Skip".
 
-- CentOS boots! Yay!
-- type ifconfig -a to check network setup
 
+Installation of CentOS 6.4
+-------------------------------------------------------------------------------
+ 1.  After the media check, the installation will continue into a graphical
+     user interface. Use the mouse and click "Next".
+
+ 2.  On the language selection screen, choose English and click "Next".
+
+ 3.  Choose U.S. English as the keyboard type for the system. Click "Next".
+
+ 4.  For this HOWTO, only basic storage devices will be used. Choose "Basic
+     Storage Devices" and click "Next".
+
+ 5.  Depending on the storage setup, the next screen may be asking to confirm
+     the storage device you wish to use by discarding any data on the storage
+     device. Confirm the correct storage device is being used and click
+     "Yes, discard any data".
+
+     There may also be a screen stating that an existing operating system was
+     found on the storage device. Select "Fresh Installation" and click "Next".
+
+ 6.  Enter the Hostname of the system. For this HOWTO, the name will be:
+
+          J-AND-B
+
+     On the same screen, click the "Configure Network" button. On the new
+     window, highlight "System eth0" and click "Edit". Click on the "IPv4
+     Settings" tab, and change the Method to Manual. Click the "Add" button
+     and fill in the fields with the following information:
+
+          Address: 128.223.203.18
+          Netmask: 24
+          Gateway: 128.223.203.1
+
+     Also, enter the following for the DNS servers and Search domains
+     textboxes:
+
+          DNS servers   : 128.223.32.36, 128.223.60.23
+          Search domains: uoregon.edu
+
+     Click "Apply...", then "Close". Finally, click "Next" on this page.
+
+ 7.  Choose the time zone to be "America/Los Angeles". Make sure the "System
+     clock uses UTC" option is checked. Click "Next".
+
+ 8.  Enter and confirm the password for the Root user. Click "Next".
+
+ 9.  For this HOWTO, the entire storage device will be used for the
+     installation. Choose "Use All Space". Do not check "Encrypt system" or
+     "Review and modify partitioning layout". Click "Next".
+
+     A prompt asking to confirm the changes to the storage device will be
+     shown. Click the "Write changes to disk" button.
+
+ 10. On the next screen, select the "Basic Server" installation set, check the
+     "CentOS" repository, and choose "Customize later" software selection
+     option. Click "Next".
+
+ 11. The actual installation now takes place. Wait for all the packages to be
+     installed. When the installation is finished, the DVD installation media
+     will be ejected and a messaged saying congratulations will be shown.
+
+     Remove the installation DVD and click the Reboot button.
+
+
+First Boot After Installation of CentOS 6.4
+-------------------------------------------------------------------------------
+ 1.  After the system boots, the login prompt will be displayed. Use the root
+     account and password to log into the system.
+
+ 2.  After login, the root shell prompt will be ready for commands. The system
+     is now installed and functioning.
+
+END
 
