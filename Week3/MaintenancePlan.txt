@@ -1,0 +1,43 @@
+
+Maintenance Plan for J-AND-B CIS399 CentOS 6.4 Server
+===============================================================================
+The core structure of the maintenance plan resides around a monthly schedule.
+
+ 1. Operating System Patches: On first Tuesday of each month, CentOS 6.4
+ 	security, system, and application patches will be analyzed. If the patches
+ 	are considered good for production use, the patches will be installed
+ 	during the maintenance window on the second Tuesday of the month.
+ 
+ 2. Emergency Patches: The System Administration team is required to be
+ 	subscribed to the CentOS 6.4 Announcement mailing list. This mailing list
+ 	will inform the administrators of potential security holes and other
+ 	concerns. To subscribe to the mailing list, browse to:
+
+ 		http://lists.centos.org/mailman/listinfo/centos-announce
+
+ 	Each announced patch will be considered based on scope and impact. If the
+ 	patch is required for production, it may be installed outside of the
+ 	normal patch schedule. However, the patch may only be installed during a
+ 	maintenance window.
+
+ 3. Maintenance Windows: On each Tuesday and Thursday night, from 1900 hours
+ 	to midnight Pacific Time, a maintenance window may be claimed for work.
+ 	The only regularly scheduled window is during the second Tuesday of each
+ 	month and is designated for system patch installation. All other windows
+ 	are available to be claimed.
+
+ 4. Patch Installation: A System Administrator may utilize the 'yum' package
+ 	update utility to install system updates and patches.
+
+ 	To see a list of updates available for the system, run the following:
+
+ 		yum check-updates
+
+ 	To fully update the system, run the follow with root privilege:
+
+ 		yum update
+
+ 	To update only specific packages at a time, run the following with root
+ 	privilege:
+
+ 		yum update <package name(s)>
