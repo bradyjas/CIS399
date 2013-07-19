@@ -1,0 +1,43 @@
+
+###
+### Transcript of Puppet Agent Testing
+###
+
+## Test 1: Run agent after removing the openssh-server package
+
+[bradyjas@j-and-b ssh]$ sudo puppet agent --test
+Info: Retrieving plugin
+Info: Caching catalog for j-and-b.ilab.cs.uoregon.edu
+Info: Applying configuration version '1374190601'
+Notice: /Stage[main]/Sshd/Package[openssh-server]/ensure: created
+Notice: /File[/etc/ssh/sshd_config]/mode: mode changed '0600' to '0400'
+Info: /File[/etc/ssh/sshd_config]: Scheduling refresh of Service[sshd]
+Notice: /Stage[main]/Sshd/Service[sshd]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Sshd/Service[sshd]: Unscheduling refresh on Service[sshd]
+Notice: Finished catalog run in 3.88 seconds
+[bradyjas@j-and-b ssh]$
+
+
+## Test 2: Run agent after stopping the sshd service
+
+[bradyjas@j-and-b ssh]$ sudo puppet agent --test
+Info: Retrieving plugin
+Info: Caching catalog for j-and-b.ilab.cs.uoregon.edu
+Info: Applying configuration version '1374190601'
+Notice: /Stage[main]/Sshd/Service[sshd]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Sshd/Service[sshd]: Unscheduling refresh on Service[sshd]
+Notice: Finished catalog run in 0.59 seconds
+[bradyjas@j-and-b ssh]$ ps aux | grep sshd
+
+
+## Test 3: Run agent after deleting the /etc/ssh/sshd_config file
+
+[bradyjas@j-and-b ssh]$ sudo puppet agent --test
+Info: Retrieving plugin
+Info: Caching catalog for j-and-b.ilab.cs.uoregon.edu
+Info: Applying configuration version '1374190601'
+Notice: /File[/etc/ssh/sshd_config]/ensure: defined content as '{md5}853a26a0f4b8a7fc8529e45ed57fe67b'
+Info: /File[/etc/ssh/sshd_config]: Scheduling refresh of Service[sshd]
+Notice: /Stage[main]/Sshd/Service[sshd]: Triggered 'refresh' from 1 events
+Notice: Finished catalog run in 0.86 bradyjas
+[seconds@j-and-b ssh]$
