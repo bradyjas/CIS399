@@ -1,0 +1,22 @@
+Jul 25 14:14:11 j-and-b postfix/pickup[29472]: 12833E2CC1: uid=501 from=<bmccarthy>
+Jul 25 14:14:11 j-and-b postfix/cleanup[17214]: 12833E2CC1: message-id=<20130725211411.12833E2CC1@j-and-b.ilab.cs.uoregon.edu>
+Jul 25 14:14:11 j-and-b postfix/qmgr[29473]: 12833E2CC1: from=<bmccarthy@j-and-b.ilab.cs.uoregon.edu>, size=517, nrcpt=1 (queue active)
+Jul 25 14:14:41 j-and-b postfix/smtp[17216]: connect to hexadecimal.uoregon.edu[2607:8400:2802:2::80df:8e61]:25: Connection timed out
+Jul 25 14:14:42 j-and-b postfix/smtp[17216]: 12833E2CC1: to=<stevev@hexadecimal.uoregon.edu>, relay=hexadecimal.uoregon.edu[128.223.142.97]:25, delay=32, delays=0.11/0.01/31/0.43, dsn=2.0.0, status=sent (250 2.0.0 r6PLFCtX011601 Message accepted for delivery)
+Jul 25 14:14:42 j-and-b postfix/qmgr[29473]: 12833E2CC1: removed
+
+Jul 25 14:19:01 j-and-b postfix/smtpd[18706]: connect from hexadecimal.uoregon.edu[128.223.142.97]
+Jul 25 14:19:01 j-and-b postfix/smtpd[18706]: 150C7E29E1: client=hexadecimal.uoregon.edu[128.223.142.97]
+Jul 25 14:19:01 j-and-b postfix/cleanup[18709]: 150C7E29E1: message-id=<20977.38500.371249.693127@hexadecimal.uoregon.edu>
+Jul 25 14:19:01 j-and-b postfix/qmgr[29473]: 150C7E29E1: from=<stevev@hexadecimal.uoregon.edu>, size=2269, nrcpt=1 (queue active)
+Jul 25 14:19:01 j-and-b postfix/local[18710]: 150C7E29E1: to=<bmccarthy@j-and-b.ilab.cs.uoregon.edu>, relay=local, delay=0.12, delays=0.07/0.01/0/0.05, dsn=2.0.0, status=sent (delivered to mailbox)
+Jul 25 14:19:01 j-and-b postfix/qmgr[29473]: 150C7E29E1: removed
+Jul 25 14:19:01 j-and-b postfix/smtpd[18706]: disconnect from hexadecimal.uoregon.edu[128.223.142.97]
+
+Jul 25 14:30:43 j-and-b postfix/pickup[29472]: 7F94EE2CF8: uid=501 from=<bmccarthy>
+Jul 25 14:30:43 j-and-b postfix/cleanup[21800]: 7F94EE2CF8: message-id=<20130725213043.7F94EE2CF8@j-and-b.ilab.cs.uoregon.edu>
+Jul 25 14:30:43 j-and-b postfix/qmgr[29473]: 7F94EE2CF8: from=<bmccarthy@j-and-b.ilab.cs.uoregon.edu>, size=3547, nrcpt=2 (queue active)
+Jul 25 14:30:43 j-and-b postfix/local[21803]: 7F94EE2CF8: to=<bmccarthy@j-and-b.ilab.cs.uoregon.edu>, relay=local, delay=0.17, delays=0.12/0/0/0.05, dsn=2.0.0, status=sent (delivered to mailbox)
+Jul 25 14:31:13 j-and-b postfix/smtp[21802]: connect to hexadecimal.uoregon.edu[2607:8400:2802:2::80df:8e61]:25: Connection timed out
+Jul 25 14:31:15 j-and-b postfix/smtp[21802]: 7F94EE2CF8: to=<stevev@hexadecimal.uoregon.edu>, relay=hexadecimal.uoregon.edu[128.223.142.97]:25, delay=32, delays=0.12/0/31/0.39, dsn=2.0.0, status=sent (250 2.0.0 r6PLVjis011741 Message accepted for delivery)
+Jul 25 14:31:15 j-and-b postfix/qmgr[29473]: 7F94EE2CF8: removed
