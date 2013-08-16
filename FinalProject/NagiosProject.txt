@@ -44,7 +44,7 @@ monitored.
 
     Nagios is configured to send us notification if the above services become
 degraded, or otherwise critical. We can use the web interface to view warnings
-and critical events, and also silent notifications and issue maintenance mode
+and critical events, and also silence notifications and issue maintenance mode
 for services.
 
     To test the goals of project, we have intentionally stopped or degraded
@@ -85,7 +85,7 @@ apply to our particular installation.
 required an Apache web server. Since we installed Apache in the previous
 weeks, just the Nagios binaries needed to be installed. After the EPEL
 software repository was added to our system, we were able to install a Nagios
-v2.9 package via yum. Other support and dependency packages were needed to be
+v3.5 package via yum. Other support and dependency packages were needed to be
 installed as well, such as glibc and PHP.
 
 
@@ -117,9 +117,13 @@ changes that were made to the default installation:
  - Finally, the nagios.cfg file was updated to include the configurations from
    the hosts.cfg file.
 
-    By default, Nagios does not include of way for non-authenticated users to
-accessing the web interface status pages. We have constructed a script that
-will allow all users with the URL address to access a basic read-only web page
+    The URL of our Nagios web interface is:
+    
+    http://j-and-b.ilab.cs.uoregon.edu/nagios/
+    
+    By default, Nagios does not include a way for non-authenticated users to
+access the web interface status pages. We have constructed a script that
+will allow any users with the URL address to access a basic read-only web page
 that will display the latest service states. That URL address is:
 
     http://j-and-b.ilab.cs.uoregon.edu/ilabstatus/
