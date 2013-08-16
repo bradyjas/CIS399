@@ -1,0 +1,138 @@
+
+CIS 399 - Unix System Administration Final Project
+
+Nagios System Management
+
+by Jason Brady and
+   Bruce McCarthy
+
+
+* Introduction
+
+    A major system administration task in the Information Technology world is
+the monitoring of the many diverse computer systems that a business many
+employ. Notifying system administrators of incidents with production services
+is easily one of the most essential management systems for IT. With a system
+so critical to have as this, we have decided to implement a notification
+monitoring system named Nagios.
+
+    Nagios is a well-known open source notification and monitoring system.
+Thousands of businesses rely on its ability to inform system administrators
+before, during, and after incidents occur. It can monitor individual services
+within operating systems, and provides a web interface for a graphical
+overview of active and historical incidents of the monitored services.
+
+
+* Goals of Project
+
+    We have implemented Nagios to monitor the primary services of our lab
+system, and well as availability of the other lab systems in class. The
+services monitored on our lab system are:
+
+ - System load
+ - Active users
+ - Root disk space free
+ - Swap usage
+ - Total processes
+ - Ping response
+ - HTTP
+ - SSH
+ - SMTP
+
+    On the other lab systems, only ping response, HTTP, SSH, and SMTP is
+monitored.
+
+    Nagios is configured to send us notification if the above services become
+degraded, or otherwise critical. We can use the web interface to view warnings
+and critical events, and also silent notifications and issue maintenance mode
+for services.
+
+    To test the goals of project, we have intentionally stopped or degraded
+services, such as HTTP, to verify that notifications are sent to us and are
+displayed on the web interface. After the effected service is restored,
+recovery messages are received and web interface updated to indicate the end
+of the incident.
+
+
+* Project Effects on User Population and Support Issues
+
+    Installing and running Nagios should have virtually no effect on users of
+our lab system. Only we as the system administrators should be affected. We
+have made available a webpage from the web interface that will allow users to
+view the current service statuses of our lab system, and the other lab systems
+being monitored. See the Project Documentation section for more information
+about this webpage.
+
+
+* Security Issues
+
+    We have confirmed that file and directory permissions are appropriate and
+that only privileged users can get to the Nagios configuration files. The
+following website contains information about Nagios security concerns and best
+practices to mitigate them:
+
+    http://nagios.sourceforge.net/docs/3_0/security.html
+
+    We have understood the issues and implemented the best practices as far as
+is practical for this project. Since we are only be monitoring our lab system
+and others on the same network segment, many of the security issues do not
+apply to our particular installation.
+
+
+* Work Completed
+
+    The project work involved installation of the Nagios binaries, which also
+required an Apache web server. Since we installed Apache in the previous
+weeks, just the Nagios binaries needed to be installed. After the EPEL
+software repository was added to our system, we were able to install a Nagios
+v2.9 package via yum. Other support and dependency packages were needed to be
+installed as well, such as glibc and PHP.
+
+
+* Maintenance required
+
+    After Nagios and the requirements are installed, several configuration
+files had to be created and/or altered for our setup, including files for
+hosts, services, contacts, and other objects to be monitored. Maintenance
+includes the upkeep of these configuration files as well as logs and web
+interface monitoring.
+
+
+* Project Documentation
+
+    All files related to the configuration of Nagios are located in the
+directory /etc/nagios/objects. See the attached files for the contents of the
+files added or altered for our lab system. The following is an overview the
+changes that were made to the default installation:
+
+ - Correct contact information for notification and alerts was added to
+   contacts.cfg file.
+ - The templates.cfg file contains global configuration settings for
+   notification and alerts that are not explicitly set in other configuration
+   files. This file was modified for our lab system.
+ - The localhost.cfg file was altered to include the monitoring of HTTP, SSH,
+   and SMTP services on our lab system.
+ - The hosts.cfg was created and included settings for the monitoring of the
+   other lab systems.
+ - Finally, the nagios.cfg file was updated to include the configurations from
+   the hosts.cfg file.
+
+    By default, Nagios does not include of way for non-authenticated users to
+accessing the web interface status pages. We have constructed a script that
+will allow all users with the URL address to access a basic read-only web page
+that will display the latest service states. That URL address is:
+
+    http://j-and-b.ilab.cs.uoregon.edu/ilabstatus/
+
+    A code listing for the script is also attached to this document named
+ilabstatus.sh. The script is located on the lab system in the /root directory.
+The script runs every two minutes via cron job.
+
+    Suppressing notifications and alarms for incidents is as easy as finding
+the affected service on the Services page of the Nagios web interface, and
+clicking one of many service commands available. One of the commands is
+"Disable notifications for this service".
+
+    Setting a system or service into maintained mode can be done on the
+Downtime page of the Nagios web interface. This page allows an administrator
+to schedule downtime windows that will not send notifications for alerts.
